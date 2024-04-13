@@ -1,0 +1,96 @@
+{
+	"info": {
+		"_postman_id": "3ee128b2-e860-421a-8225-f0bb85e9cb7c",
+		"name": "course_tutor_api_collections",
+		"description": "Create and Index API endpoints for course and Tutor application.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25486903"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/api/v1/courses",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"course\": {\n    \"name\": \"Scala\",\n    \"description\": \"Learn Scala in 30 days\",\n    \"code\": \"COURSECODE130\",\n    \"tutors_attributes\": [\n      {\n        \"name\": \"Sandy\",\n        \"email\": \"Sandy@gmail.com\",\n        \"bio\": \"SS\"\n      },\n      {\n        \"name\": \"Manu\",\n        \"email\": \"manu@gmail.com\",\n        \"bio\": \"MM\"\n      },\n      {\n        \"name\": \"Riddhi\",\n        \"email\": \"riddhi@gmail.com\",\n        \"bio\": \"RR\"\n      }\n    ]\n  }\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/courses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"courses"
+					]
+				},
+				"description": "Common POST API to create a course & its tutors."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/v1/courses?page=1&per_page=10",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/courses?page=1&per_page=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"courses"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "per_page",
+							"value": "10"
+						}
+					]
+				},
+				"description": "Listing course details with pagination params."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/v1/courses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/courses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"courses"
+					]
+				},
+				"description": "Listing all course details without pagination."
+			},
+			"response": []
+		}
+	]
+}
